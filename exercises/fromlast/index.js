@@ -1,3 +1,6 @@
+mod = require('./linkedlist')
+LinkedList = mod.LinkedList
+Node = mod.Node
 // --- Directions
 // Given a linked list, return the element n spaces
 // from the last node in the list.  Do not call the 'size'
@@ -11,6 +14,6 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) { }
 
 module.exports = fromLast;
