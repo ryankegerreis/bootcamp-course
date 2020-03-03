@@ -27,6 +27,32 @@ class Node {
   }
 }
 
-class Tree { }
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+
+  traverseBF(fn) {
+    const arr = [this.root]
+
+    while (arr.length) {
+      const newNode = arr.shift()
+
+      arr.push(...newNode.children)
+      fn(newNode)
+    }
+  }
+
+  traverseDF(fn) {
+    const arr = [this.root]
+
+    while (arr.length) {
+      const newNode = arr.shift()
+      //Only difference is unshift vs push. Adding to the beginning vs adding to the end.
+      arr.unshift(...newNode.children)
+      fn(newNode)
+    }
+  }
+}
 
 module.exports = { Tree, Node };
